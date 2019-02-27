@@ -12,7 +12,7 @@ const createBoard = function(content1, content2, content3, content4, time){
                 <div><span id="time">${time}</span></div>
             </div>
             <div id="right-container" class="drop-container">
-
+                <button onclick="getOrder()">Check it!</button>
             </div>
         </div>`;
 };
@@ -59,18 +59,6 @@ dragula([document.getElementById('left-container'), document.getElementById('rig
   }
 });
 
-
-/*function getOrder() {
-    const el_one = document.querySelector('#l1');
-    const order = el_one.dataset.dataOrder;
-    console.log(order);
-    const el_two = document.querySelector('#l2');
-    console.log(el_two);
-    const el_three = document.querySelector('#l3');
-    console.log(el_three);
-    const  el_four = document.querySelector('#l4');
-    console.log(el_four);
-} */
 
 function getOrder() {
     let order = document.getElementsByClassName('left');
