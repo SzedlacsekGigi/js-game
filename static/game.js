@@ -1,7 +1,36 @@
+
+const createBoard = function(content1, content2, content3, content4, time){
+    return `
+        <div class="row">
+            <div id="left-container" class="drag-container">
+                <div class="left" id="l1">${content1}</div>
+                <div class="left" id="l2">${content2}</div>
+                <div class="left" id="l3">${content3}</div>
+                <div class="left" id="l4">${content4}</div>
+            </div>
+            <div id="center">
+                <div><span id="time">${time}</span></div>
+            </div>
+            <div id="right-container" class="drop-container">
+
+            </div>
+        </div>`;
+};
+
+const cardElementHTML = createBoard(
+    'content 1',
+    'content 2',
+    'bla blu 3',
+    'ke ka 4',
+    '5:00');
+
+document.querySelector('#container').innerHTML = cardElementHTML;
+
+
 function startTimer(duration, display) {
     let timer = duration, minutes, seconds;
     setInterval(function () {
-        minutes = parseInt(timer / 60, 10)
+        minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
 
         minutes = minutes < 10 ? "0" + minutes : minutes;
@@ -21,11 +50,12 @@ window.onload = function () {
     startTimer(fiveMinutes, display);
 };
 
-dragula([document.getElementsByClassName('left'), document.getElementsByClassName('right')], {
- //   copy: function (el, source) {
- //   return source === document.getElementById('left')
- // },
+
+
+dragula([document.getElementById('left-container'), document.getElementById('right-container')], {
+
   accepts: function (el, target) {
-    return target !== document.getElementsByClassName('left')
+    return target !== document.getElementById('left-container')
   }
 });
+
