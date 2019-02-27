@@ -11,14 +11,14 @@ body{
     padding: 10px;
     height: 600px;}
 
-#leftcontainer{
+#left-container{
     float: left;
     height: 600px;
     width: 30%;
     background-color: blue;
 }
 
-#rightcontainer{
+#right-container{
     float: left;
     height: 600px;
     width: 30%;
