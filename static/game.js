@@ -21,11 +21,28 @@ window.onload = function () {
     startTimer(fiveMinutes, display);
 };
 
-dragula([document.getElementsByClassName('left'), document.getElementsByClassName('right')], {
- //   copy: function (el, source) {
- //   return source === document.getElementById('left')
- // },
+dragula([document.getElementById('leftcontainer'), document.getElementById('rightcontainer')], {
   accepts: function (el, target) {
-    return target !== document.getElementsByClassName('left')
+    return target !== document.getElementById('leftcontainer')
   }
 });
+
+
+/*function getOrder() {
+    const el_one = document.querySelector('#l1');
+    const order = el_one.dataset.dataOrder;
+    console.log(order);
+    const el_two = document.querySelector('#l2');
+    console.log(el_two);
+    const el_three = document.querySelector('#l3');
+    console.log(el_three);
+    const  el_four = document.querySelector('#l4');
+    console.log(el_four);
+} */
+
+function getOrder() {
+    let order = document.getElementsByClassName('left');
+    let checkThis = (order[0].innerHTML + order[1].innerHTML + order[2].innerHTML + order[3].innerHTML);
+    let spacefree = (checkThis.replace(/ /g,''));
+    console.log(spacefree);
+}
