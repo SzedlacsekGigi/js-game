@@ -9,26 +9,26 @@ body{
 .column{
     float: left;
     padding: 10px;
-    height: 300px;}
+    height: 600px;}
 
 #leftcontainer{
     float: left;
-    height: 300px;
-    width: 25%;
+    height: 600px;
+    width: 30%;
     background-color: blue;
 }
 
 #rightcontainer{
     float: left;
-    height: 300px;
-    width: 25%;
+    height: 600px;
+    width: 30%;
     background-color: coral;
 }
 
 #center{
     float: left;
-    height: 300px;
-    width: 50%;
+    height: 600px;
+    width: 40%;
     background-color: red;
 }
 
@@ -40,7 +40,7 @@ body{
 
 #l1, #l2, #l3, #l4{
   border-radius: 5px;
-  min-height: 50px;
+  height: 50px;
   margin: 0 auto;
   margin-top: 10px;
   padding: 2em;
@@ -49,20 +49,36 @@ body{
   background-color: #D9D9D9;
 }
 
-.right{
+/* #r1, #r2, #r3, #r4{
   border: 2px dashed #D9D9D9;
   border-radius: 5px;
-  min-height: 50px;
+  height: 50px;
   margin: 0 auto;
   margin-top: 10px;
   padding: 2em;
   display: block;
   text-align: center;
-}
+} */
 
 #time{
-    font-size: xx-large;
+    font-size: 50px;
     color: white;
     font-family: 'Orbitron', sans-serif;
+    margin: auto;
+    padding: 50%;
+    width: 50%;
+    display: block;
+}
 
+#check{
+    float: right;
+    border-color: aquamarine;
+    border: 4px;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 10px;
+    display: block;
+    text-align: center;
+    font-family: sans-serif;
 }

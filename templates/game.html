@@ -13,19 +13,17 @@
 <body>
 <div class="row">
     <div id="leftcontainer" class="drag-container">
-        <div class="left" id="l1"><p>First Something</p></div>
-        <div class="left" id="l2"><p>Second Something</p></div>
-        <div class="left" id="l3"><p>Third Something</p></div>
-        <div class="left" id="l4"><p>Fourth Something</p></div>
+        <div class="left" id="l1" data-order="first">this should be first</div>
+        <div class="left" id="l2" data-order="second">This is the second</div>
+        <div class="left" id="l3" data-order="third">Third one FELLAS</div>
+        <div class="left" id="l4" data-order="fourth">lastone</div>
+        <p id="demo"></p>
     </div>
     <div id="center">
         <div><span id="time">05:00</span></div>
     </div>
     <div id="rightcontainer" class="drop-container">
-        <div class="right"></div>
-        <div class="right"></div>
-        <div class="right"></div>
-        <div class="right"></div>
+        <button onclick="getOrder()">Submit</button>
     </div>
 </div>
 </body>
