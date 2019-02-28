@@ -31,6 +31,19 @@ const createTable = function(content_1, content_2, content_3, content_4, time) {
 
     return clone;
 
+
+const createTable = function(content_1, content_2, content_3, content_4, time) {
+    const template = document.querySelector('#table');
+    const clone = document.importNode(template.content, true);
+
+    clone.querySelector('#l1').textContent = content_1;
+    clone.querySelector('#l2').textContent = content_2;
+    clone.querySelector('#l3').textContent = content_3;
+    clone.querySelector('#l4').textContent = content_4;
+    clone.querySelector('#time').textContent = time;
+
+    return clone;
+
 };
 
 const tableContent  = createTable(

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,8 +10,8 @@
     <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
     <script src="static/game.js" defer></script>
 </head>
-<body id="container" onload="loadGame()">
 
+<body id="container">
 <template id="table">
     <div class="row">
         <div id="left-container" class="drag-container">
@@ -23,6 +23,7 @@
         <div id="center">
             <div id="counter"></div>
             <div><span id="time">05:00</span></div>
+
         </div>
         <div id="right-container" class="drop-container">
             <button onclick="checkPlayersSolution()">Check it!</button>

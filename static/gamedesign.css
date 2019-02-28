@@ -1,5 +1,6 @@
 body{
-    background-color: darkmagenta;
+    background-image: url("/static/pic_2_mod.jpeg");
+    background-size: cover;
 }
 
 * {
@@ -15,21 +16,29 @@ body{
     float: left;
     height: 600px;
     width: 30%;
-    background-color: blue;
 }
 
 #right-container{
+    margin-top: 50px;
     float: left;
     height: 600px;
     width: 30%;
-    background-color: coral;
+    border: white dashed 2px;
+    border-radius: 10px;
+}
+
+#left-container {
+    margin-top: 50px;
+    height: 600px;
+    width: 30%;
+    opacity: 0.8;
 }
 
 #center{
     float: left;
     height: 600px;
     width: 40%;
-    background-color: red;
+
 }
 
 .row:after {
@@ -39,35 +48,28 @@ body{
 }
 
 #l1, #l2, #l3, #l4{
-  border-radius: 5px;
-  height: 50px;
-  margin: 0 auto;
-  margin-top: 10px;
-  padding: 2em;
-  display: block;
-  text-align: center;
-  background-color: #D9D9D9;
+    border-radius: 5px;
+    height: 50px;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 2em;
+    display: block;
+    text-align: center;
+    background-color: #D9D9D9;
+    opacity: 0.8;
 }
 
-/* #r1, #r2, #r3, #r4{
-  border: 2px dashed #D9D9D9;
-  border-radius: 5px;
-  height: 50px;
-  margin: 0 auto;
-  margin-top: 10px;
-  padding: 2em;
-  display: block;
-  text-align: center;
-} */
+
 
 #time{
     font-size: 50px;
-    color: white;
+    color: red;
     font-family: 'Orbitron', sans-serif;
-    margin: auto;
     padding: 50%;
     width: 50%;
-    display: block;
+    margin-top: -70px;
+    margin-left: -45px;
+    display: inline-block;
 }
 
 #check{
