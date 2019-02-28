@@ -49,16 +49,7 @@ body{
   background-color: #D9D9D9;
 }
 
-.right{
-  border: 2px dashed #D9D9D9;
-  border-radius: 5px;
-  height: 50px;
-  margin: 0 auto;
-  margin-top: 10px;
-  padding: 2em;
-  display: block;
-  text-align: center;
-}
+
 
 #time{
     font-size: 50px;

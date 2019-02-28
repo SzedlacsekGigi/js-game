@@ -10,6 +10,7 @@ const createTable = function(content_1, content_2, content_3, content_4, time) {
     clone.querySelector('#time').textContent = time;
 
     return clone;
+
 };
 
 const tableContent  = createTable(
@@ -21,6 +22,7 @@ const tableContent  = createTable(
 );
 
 document.querySelector('#container').appendChild(tableContent);
+
 
 
 
