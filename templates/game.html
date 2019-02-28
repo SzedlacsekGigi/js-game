@@ -9,8 +9,27 @@
     <link rel="stylesheet" href="static/gamedesign.css">
     <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
     <script src="static/game.js" defer></script>
-    <script src="static/data.js" defer></script>
 </head>
-<body id="container">
+<body id="container" onload="loadGame()">
+
+<template id="table">
+    <div class="row">
+        <div id="left-container" class="drag-container">
+            <div class="left" id="l1"></div>
+            <div class="left" id="l2"></div>
+            <div class="left" id="l3"></div>
+            <div class="left" id="l4"></div>
+        </div>
+        <div id="center">
+            <div id="counter"></div>
+            <div><span id="time">05:00</span></div>
+        </div>
+        <div id="right-container" class="drop-container">
+            <button onclick="checkPlayersSolution()">Check it!</button>
+            <button onclick="getTime()">Get Exact Time</button>
+
+        </div>
+    </div>
+</template>
 </body>
 </html>
