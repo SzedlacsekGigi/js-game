@@ -1,31 +1,30 @@
 
-const createBoard = function(content1, content2, content3, content4, time){
-    return `
-        <div class="row">
-            <div id="left-container" class="drag-container">
-                <div class="left" id="l1">${content1}</div>
-                <div class="left" id="l2">${content2}</div>
-                <div class="left" id="l3">${content3}</div>
-                <div class="left" id="l4">${content4}</div>
-            </div>
-            <div id="center">
-                <div><span id="time">${time}</span></div>
-            </div>
-            <div id="right-container" class="drop-container">
-                <button onclick="checkPlayersSolution()">Check it!</button>
-                <button onclick="getTime()">Get Exact Time</button>
-            </div>
-        </div>`;
+const createTable = function(content_1, content_2, content_3, content_4, time) {
+    const template = document.querySelector('#table');
+    const clone = document.importNode(template.content, true);
+
+    clone.querySelector('#l1').textContent = content_1;
+    clone.querySelector('#l2').textContent = content_2;
+    clone.querySelector('#l3').textContent = content_3;
+    clone.querySelector('#l4').textContent = content_4;
+    clone.querySelector('#time').textContent = time;
+
+    return clone;
+
 };
 
-const cardElementHTML = createBoard(
+const tableContent  = createTable(
     'content 1',
     'content 2',
     'bla blu 3',
     'ke ka 4',
-    '03:00');
+    '3:00'
+);
 
-document.querySelector('#container').innerHTML = cardElementHTML;
+document.querySelector('#container').appendChild(tableContent);
+
+
+
 
 
 function startTimer(duration, display) {
