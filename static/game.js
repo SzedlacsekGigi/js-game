@@ -1,20 +1,4 @@
 
-const createBoard = function(content1, content2, content3, content4, time){
-    return `
-        <div class="row">
-            <div id="left-container" class="drag-container">
-                <div class="left" id="l1">${content1}</div>
-                <div class="left" id="l2">${content2}</div>
-                <div class="left" id="l3">${content3}</div>
-                <div class="left" id="l4">${content4}</div>
-            </div>
-            <div id="center">
-                <div><span id="time">${time}</span></div>
-            </div>
-            <div id="right-container" class="drop-container">
-                <button onclick="getOrder()">Check it!</button>
-            </div>
-        </div>`;
 const createTable = function(content_1, content_2, content_3, content_4, time) {
     const template = document.querySelector('#table');
     const clone = document.importNode(template.content, true);
@@ -52,16 +36,19 @@ function startTimer(duration, display) {
 
         display.textContent = minutes + ":" + seconds;
 
-        if (--timer < 0) {
+       /* if (--timer < 0) {
             timer = duration;
+        }*/
+        if (--timer == 0, 0, 0){
+            return alert('You run out of time!')
         }
     }, 1000);
 }
 
 window.onload = function () {
-    let fiveMinutes = 60 * 5,
+    let threeMinutes = 60 * 3,
         display = document.querySelector('#time');
-    startTimer(fiveMinutes, display);
+    startTimer(threeMinutes, display);
 };
 
 
@@ -77,6 +64,27 @@ dragula([document.getElementById('left-container'), document.getElementById('rig
 function getOrder() {
     let order = document.getElementsByClassName('left');
     let checkThis = (order[0].innerHTML + order[1].innerHTML + order[2].innerHTML + order[3].innerHTML);
-    let spacefree = (checkThis.replace(/ /g,''));
-    console.log(spacefree);
+    let SpacefreeSolution = (checkThis.replace(/ /g,''));
+    return SpacefreeSolution;
+}
+
+function getTime() {
+    let getExactTime = document.getElementById('time');
+    console.log(getExactTime.textContent);
+}
+
+function getSolution() {
+    let correct = snippets.id1 + snippets.id2 + snippets.id3 + snippets.id4;
+    let correctSpacefreeSolution = (correct.replace(/ /g,""));
+    return correctSpacefreeSolution;
+}
+
+function checkPlayersSolution() {
+    SpaceFreeSolution = getOrder();
+    correctSpaceFreeSoltuion = getSolution();
+    if (SpaceFreeSolution == correctSpaceFreeSoltuion){
+        alert('Good answer')
+    } else {
+        alert('The answer is wrong')
+    }
 }
