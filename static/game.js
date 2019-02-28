@@ -1,3 +1,36 @@
+let snippets = [["num_list = [1, 2, 3, 4]\n" + "new_number = 0",
+        "for i in range(len(num_list)):" + "\n" + "new_number += 1",
+        "num_list.append(new_number)",
+        "return num_list"],
+        ["első", "második","harmadik", "negyedik"]];
+
+var round = 0;
+
+/* function loadTask() {
+        for (let snippet of snippets){
+                let task = snippet.sort();
+                document.getElementById("l1").innerHTML = task[0];
+                document.getElementById("l2").innerHTML = task[1];
+                document.getElementById("l3").innerHTML = task[2];
+                document.getElementById("l4").innerHTML = task[3];
+
+        }
+        return snippet;
+} */
+
+
+const createTable = function(content_1, content_2, content_3, content_4, time) {
+    const template = document.querySelector('#table');
+    const clone = document.importNode(template.content, true);
+
+    clone.querySelector('#l1').textContent = content_1;
+    clone.querySelector('#l2').textContent = content_2;
+    clone.querySelector('#l3').textContent = content_3;
+    clone.querySelector('#l4').textContent = content_4;
+    clone.querySelector('#time').textContent = time;
+
+    return clone;
+
 
 const createTable = function(content_1, content_2, content_3, content_4, time) {
     const template = document.querySelector('#table');
@@ -24,8 +57,22 @@ const tableContent  = createTable(
 document.querySelector('#container').appendChild(tableContent);
 
 
+function loadGame(round) {
+    let taskBase = snippets[round];
+    let task = [];
+    for (let i = 0; i < taskBase.length; i++) {
+        task[i] = taskBase[i];
+    }
+    let exercise = task.sort();
+    document.getElementById("l1").innerHTML = exercise[0];
+    document.getElementById("l2").innerHTML = exercise[1];
+    document.getElementById("l3").innerHTML = exercise[2];
+    document.getElementById("l4").innerHTML = exercise[3];
+    return taskBase;
+}
 
 
+loadGame(round);
 
 function startTimer(duration, display) {
     let timer = duration, minutes, seconds;
@@ -76,17 +123,37 @@ function getTime() {
 }
 
 function getSolution() {
-    let correct = snippets.id1 + snippets.id2 + snippets.id3 + snippets.id4;
+    let taskBase = loadGame(round);
+    let correct = taskBase[0] + taskBase[1] + taskBase[2] + taskBase[3];
     let correctSpacefreeSolution = (correct.replace(/ /g,""));
     return correctSpacefreeSolution;
 }
 
 function checkPlayersSolution() {
-    SpaceFreeSolution = getOrder();
-    correctSpaceFreeSoltuion = getSolution();
-    if (SpaceFreeSolution == correctSpaceFreeSoltuion){
-        alert('Good answer')
+    let SpaceFreeSolution = getOrder();
+    let correctSpaceFreeSoltuion = getSolution();
+    if (SpaceFreeSolution === correctSpaceFreeSoltuion){
+        alert('Good answer');
+        round = round + 1;
+        loadGame(round)
+        return true;
     } else {
-        alert('The answer is wrong')
+        alert('The answer is wrong');
+        return false;
     }
 }
+
+/*function countRounds() {
+    let counter = 5
+    if(checkPlayersSolution() == true){
+        counter = counter-1;
+        return counter;
+    } else if(checkPlayersSolution()== false){
+        counter = counter;
+        return counter;
+    }
+}*/
+
+
+document.querySelector('#counter').innerHTML = 5 - round;
+
