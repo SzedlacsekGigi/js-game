@@ -14,22 +14,23 @@ body{
 
 #left-container{
     float: left;
-    height: 600px;
+    height: 400px;
     width: 30%;
 }
 
 #right-container{
     margin-top: 50px;
     float: left;
-    height: 600px;
+    height: 400px;
     width: 30%;
     border: white dashed 2px;
     border-radius: 10px;
+    position: relative;
 }
 
 #left-container {
     margin-top: 50px;
-    height: 600px;
+    height: 400px;
     width: 30%;
     opacity: 0.8;
 }
@@ -57,6 +58,7 @@ body{
     text-align: center;
     background-color: #D9D9D9;
     opacity: 0.8;
+    font-family: 'Orbitron', sans-serif;
 }
 
 
@@ -73,19 +75,46 @@ body{
 }
 
 #check{
-    float: right;
-    border-color: aquamarine;
-    border: 4px;
-    height: 40px;
-    margin: 0 auto;
-    margin-top: 20px;
-    padding: 10px;
-    display: block;
+    background-color: chartreuse;
+    border: none;
+    color: black;
+    padding: 15px 32px;
     text-align: center;
-    font-family: sans-serif;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    margin-right: auto;
+    margin-left: auto;
+    width: auto;
+    font-family: 'Orbitron', sans-serif;
+
 }
 
 #counter{
-    font-size: 50px;
-    color: blue;
+    font-size: 60px;
+    color: chartreuse;
+    font-family: 'Orbitron';
+}
+
+button{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+
+}
+
+
+.solution{
+    -webkit-animation: flash linear 1s infinite;
+    animation: flash linear 1s infinite;
+}
+@-webkit-keyframes flash {
+    0% {opacity: 1;}
+    50% {opacity: .1;}
+    100% {opacity: 1;}
+}
+@keyframes flash {
+    0% {opacity: 1;}
+    50% {opacity: .1;}
+    100% {opacity: 1;}
 }

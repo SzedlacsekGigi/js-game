@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.css" />
     <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js' defer></script>
     <link rel="stylesheet" href="static/gamedesign.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Syncopate" />
     <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
     <script src="static/game.js" defer></script>
 </head>
@@ -21,16 +22,15 @@
             <div class="left" id="l4"></div>
         </div>
         <div id="center">
+            <div><span id="time">03:00</span></div>
             <div id="counter"></div>
-            <div><span id="time">05:00</span></div>
-
         </div>
         <div id="right-container" class="drop-container">
-            <button onclick="checkPlayersSolution()">Check it!</button>
-            <button onclick="getTime()">Get Exact Time</button>
-
+            <button id="check" onclick="checkPlayersSolution()">Check it!</button>
+            <div class="solution"></div>
         </div>
     </div>
 </template>
+<audio src="./static/timer.mp3" autoplay="autoplay"></audio>
 </body>
 </html>
