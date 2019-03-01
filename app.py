@@ -12,6 +12,13 @@ def home():
 def game():
     return render_template('game.html')
 
+@app.route('/lose')
+def lose():
+    return render_template('lose.html')
+
+@app.route('/win')
+def win():
+    return render_template('win.html')
 
 if __name__ == '__main__':
     app.run(

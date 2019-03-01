@@ -1,36 +1,36 @@
-let snippets = [["num_list = [1, 2, 3, 4]\n" + "new_number = 0",
+let snippets = [["num_list = [1, 2, 3, 4]" + "\n" + "new_number = 0",
         "for i in range(len(num_list)):" + "\n" + "new_number += 1",
         "num_list.append(new_number)",
         "return num_list"],
-        ["első", "második","harmadik", "negyedik"]];
+        ["UPDATE question",
+        "SET vote_number = vote_number +1",
+        "WHERE id = %(id)s",
+        "{'id': id}"],
+        ["try:",
+        "return math.sqrt(a*a + b*b)",
+        "except TypeError:",
+        "return None"],
+        ["@app.route(/)",
+        "def route_home():",
+        "if request.method == 'POST':",
+        "return render_template('home.html')"],
+        ["if __name__ == '__main__':",
+        "app.run(",
+        "debug=True,",
+        "port=5000)"],
+        ["if try_to_check == '/':",
+        "return 10 - last_try_points",
+        "else:",
+        "return actual_try_points"],
+        ];
 
 var round = 0;
-
-/* function loadTask() {
-        for (let snippet of snippets){
-                let task = snippet.sort();
-                document.getElementById("l1").innerHTML = task[0];
-                document.getElementById("l2").innerHTML = task[1];
-                document.getElementById("l3").innerHTML = task[2];
-                document.getElementById("l4").innerHTML = task[3];
-
-        }
-        return snippet;
-} */
-
-
-const createTable = function(content_1, content_2, content_3, content_4, time) {
-    const template = document.querySelector('#table');
-    const clone = document.importNode(template.content, true);
-
-    clone.querySelector('#l1').textContent = content_1;
-    clone.querySelector('#l2').textContent = content_2;
-    clone.querySelector('#l3').textContent = content_3;
-    clone.querySelector('#l4').textContent = content_4;
-    clone.querySelector('#time').textContent = time;
-
-    return clone;
-
+function endGame(round) {
+    if (round === 5){
+        alert('You\'ve made it! You deserve a party!');
+        window.location = 'http://127.0.0.1:5000/win';
+    }
+}
 
 const createTable = function(content_1, content_2, content_3, content_4, time) {
     const template = document.querySelector('#table');
@@ -51,7 +51,7 @@ const tableContent  = createTable(
     'content 2',
     'bla blu 3',
     'ke ka 4',
-    '3:00'
+    '03:00'
 );
 
 document.querySelector('#container').appendChild(tableContent);
@@ -68,6 +68,7 @@ function loadGame(round) {
     document.getElementById("l2").innerHTML = exercise[1];
     document.getElementById("l3").innerHTML = exercise[2];
     document.getElementById("l4").innerHTML = exercise[3];
+    document.getElementById("counter").innerHTML = "Code to go: " + (5-round);
     return taskBase;
 }
 
@@ -85,11 +86,9 @@ function startTimer(duration, display) {
 
         display.textContent = minutes + ":" + seconds;
 
-       /* if (--timer < 0) {
-            timer = duration;
-        }*/
-        if (--timer == 0, 0, 0){
-            return alert('You run out of time!')
+        if (--timer < 0) {
+            alert('You lose');
+            window.location = 'http://127.0.0.1:5000/lose';
         }
     }, 1000);
 }
@@ -133,27 +132,15 @@ function checkPlayersSolution() {
     let SpaceFreeSolution = getOrder();
     let correctSpaceFreeSoltuion = getSolution();
     if (SpaceFreeSolution === correctSpaceFreeSoltuion){
-        alert('Good answer');
+        document.getElementsByClassName('solution').innerHTML = ("CORRECT");
+        console.log('correct')
         round = round + 1;
-        loadGame(round)
+        endGame(round);
+        loadGame(round);
         return true;
     } else {
-        alert('The answer is wrong');
+        document.getElementsByClassName('solution').innerHTML = ("INCORRECT");
+        console.log('incorrect')
         return false;
     }
 }
-
-/*function countRounds() {
-    let counter = 5
-    if(checkPlayersSolution() == true){
-        counter = counter-1;
-        return counter;
-    } else if(checkPlayersSolution()== false){
-        counter = counter;
-        return counter;
-    }
-}*/
-
-
-document.querySelector('#counter').innerHTML = 5 - round;
-
